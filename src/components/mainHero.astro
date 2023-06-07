@@ -1,32 +1,34 @@
 ---
 import Button from "./button.astro";
+
+
+const heroBackgroundImages: string[] = [
+  "hero-carousel-1.jpg",
+  "hero-carousel-2.jpg",
+  "hero-carousel-3.jpg",
+  "hero-carousel-4.jpg",
+  "hero-carousel-5.jpg"
+];
+
+
 ---
 
 <!-- Slider main container -->
 <div class="swiper w-full h-screen">
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper w-full h-full">
-      <!-- Slides -->
-      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-1.jpg')] w-full h-full">
-        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-      </div>
-      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-2.jpg')] w-full h-full">
-        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-      </div>
-      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-3.jpg')] w-full h-full">
-        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-      </div>
-      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-4.jpg')] w-full h-full">
-        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-      </div>
-      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-5.jpg')] w-full h-full">
-        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-      </div>
+    <div class="swiper-wrapper">
+      <!-- Carousel Slides -->
+      {
+        heroBackgroundImages.map(img => {
+          return <div class={`swiper-slide relative bg-[url('/assets/images/hero-carousel/${img}')] after:absolute after:inset-0 after:bg-black after:bg-opacity-70`}></div>
+        })
+      }
     </div>
+
      <!--Hero Content -->
      <div class="my-container h-full absolute inset-0 z-[1]">
       <div class="flex justify-center items-center h-full text-center ">
-        <div class="block">
+        <div class="w-1/2 px-3">
           <h1 class="text-[56px] font-[650] text-white block mb-8">Welcome to
             <span class="block">UpConstruction</span>
           </h1>
@@ -52,7 +54,6 @@ import Button from "./button.astro";
     }
   </style>
 
-  <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
   <script is:inline type="module">
     const swiper = new Swiper('.swiper',{
     // Optional parameters
