@@ -1,0 +1,58 @@
+---
+
+---
+
+<!-- Slider main container -->
+<div class="swiper w-full h-screen">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper w-full h-full">
+      <!-- Slides -->
+      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-1.jpg')] w-full h-full"></div>
+      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-2.jpg')] w-full h-full"></div>
+      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-3.jpg')] w-full h-full"></div>
+      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-4.jpg')] w-full h-full"></div>
+      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-5.jpg')] w-full h-full"></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+
+  <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+  <script is:inline type="module">
+    const swiper = new Swiper('.swiper',{
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      bulletActiveClass: "swiper-pagination-bullet-active bg-white",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true,
+      dragClass: "swiper-scrollbar-drag",
+    },
+  });
+  </script>

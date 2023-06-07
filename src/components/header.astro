@@ -2,19 +2,19 @@
 import Button from "../components/button.astro";
 ---
 
-<header id="header" class="py-8">
+<header id="header" class="py-8 fixed w-full z-1">
   <div class="my-container">
     <div class="flex justify-between align-middle">
       <a href="#">
         <h1 class="text-2xl font-bold uppercase">Brand Name</h1>
       </a>
       <nav class="flex gap-x-8 h-fit my-auto">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/team">Team</a>
+        <a href="/contact">Contact</a>
       </nav>
       <Button className="bg-dark">Get started</Button>
     </div>
