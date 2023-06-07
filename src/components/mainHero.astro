@@ -1,5 +1,5 @@
 ---
-
+import Button from "./button.astro";
 ---
 
 <!-- Slider main container -->
@@ -7,22 +7,50 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper w-full h-full">
       <!-- Slides -->
-      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-1.jpg')] w-full h-full"></div>
-      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-2.jpg')] w-full h-full"></div>
-      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-3.jpg')] w-full h-full"></div>
-      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-4.jpg')] w-full h-full"></div>
-      <div class="swiper-slide bg-[url('/assets/images/hero-carousel/hero-carousel-5.jpg')] w-full h-full"></div>
+      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-1.jpg')] w-full h-full">
+        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      </div>
+      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-2.jpg')] w-full h-full">
+        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      </div>
+      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-3.jpg')] w-full h-full">
+        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      </div>
+      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-4.jpg')] w-full h-full">
+        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      </div>
+      <div class="swiper-slide relative bg-[url('/assets/images/hero-carousel/hero-carousel-5.jpg')] w-full h-full">
+        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      </div>
+    </div>
+     <!--Hero Content -->
+     <div class="my-container h-full absolute inset-0 z-[1]">
+      <div class="flex justify-center items-center h-full text-center ">
+        <div class="block">
+          <h1 class="text-[56px] font-[650] text-white block mb-8">Welcome to
+            <span class="block">UpConstruction</span>
+          </h1>
+          <p class="text-lg text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <Button className="bg-primary text-dark font-bold">Get Started</Button>
+        </div>
+      </div>
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
   
     <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev ml-5 text-white bg-white bg-opacity-10 w-12 h-12 rounded-full"></div>
+    <div class="swiper-button-next mr-5 text-white bg-white bg-opacity-10 w-12 h-12 rounded-full"></div>
   
     <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
   </div>
+
+  <style>
+    :root {
+      --swiper-navigation-size: 1.5rem;
+    }
+  </style>
 
   <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
   <script is:inline type="module">
@@ -54,5 +82,7 @@
       draggable: true,
       dragClass: "swiper-scrollbar-drag",
     },
+
+    
   });
   </script>
