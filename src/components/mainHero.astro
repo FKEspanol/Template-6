@@ -2,12 +2,13 @@
 import Button from "./button.astro";
 
 
+
 const heroBackgroundImages: string[] = [
-  "hero-carousel-1.jpg",
-  "hero-carousel-2.jpg",
-  "hero-carousel-3.jpg",
-  "hero-carousel-4.jpg",
-  "hero-carousel-5.jpg"
+  "bg-[url('/assets/images/hero-carousel/hero-carousel-1.jpg')]",
+  "bg-[url('/assets/images/hero-carousel/hero-carousel-2.jpg')]",
+  "bg-[url('/assets/images/hero-carousel/hero-carousel-3.jpg')]",
+  "bg-[url('/assets/images/hero-carousel/hero-carousel-4.jpg')]",
+  "bg-[url('/assets/images/hero-carousel/hero-carousel-5.jpg')]",
 ];
 
 
@@ -20,7 +21,7 @@ const heroBackgroundImages: string[] = [
       <!-- Carousel Slides -->
       {
         heroBackgroundImages.map(img => {
-          return <div class={`swiper-slide relative bg-[url('/assets/images/hero-carousel/${img}')] after:absolute after:inset-0 after:bg-black after:bg-opacity-70`}></div>
+          return <div class={`swiper-slide relative ${img} bg-cover bg-center bg-no-repeat after:absolute after:inset-0 after:bg-black after:bg-opacity-70`}></div>
         })
       }
     </div>
@@ -60,10 +61,10 @@ const heroBackgroundImages: string[] = [
     direction: "horizontal",
     loop: true,
 
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false,
+    // },
 
     // If we need pagination
     pagination: {
