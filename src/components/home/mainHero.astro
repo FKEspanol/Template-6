@@ -1,5 +1,5 @@
 ---
-import Button from "./button.astro";
+import Button from "../button.astro";
 
 
 
@@ -13,7 +13,7 @@ const heroBackgroundImages: string[] = [
 ---
 
 <!-- Slider main container -->
-<div class="swiper w-full h-screen">
+<section class="swiper w-full h-screen">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Carousel Slides -->
@@ -27,7 +27,7 @@ const heroBackgroundImages: string[] = [
      <!--Hero Content -->
      <div class="my-container h-full absolute inset-0 z-[1]">
       <div class="flex justify-center items-center h-full text-center ">
-        <div class="w-full lg:w-1/2 px-3">
+        <div class="w-full lg:w-1/2 lg:px-3">
           <h1 class="text-4xl md:text-[56px] font-[600] text-white block mb-8">Welcome to
             <span class="block md:mt-5">UpConstruction</span>
           </h1>
@@ -45,7 +45,7 @@ const heroBackgroundImages: string[] = [
   
     <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
-  </div>
+</section>
 
   <style>
     :root {
