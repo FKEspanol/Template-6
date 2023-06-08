@@ -10,8 +10,6 @@ const heroBackgroundImages: string[] = [
   "bg-[url('/assets/images/hero-carousel/hero-carousel-4.jpg')]",
   "bg-[url('/assets/images/hero-carousel/hero-carousel-5.jpg')]",
 ];
-
-
 ---
 
 <!-- Slider main container -->
@@ -20,8 +18,8 @@ const heroBackgroundImages: string[] = [
     <div class="swiper-wrapper">
       <!-- Carousel Slides -->
       {
-        heroBackgroundImages.map(img => {
-          return <div class={`swiper-slide relative ${img} bg-cover bg-center bg-no-repeat after:absolute after:inset-0 after:bg-black after:bg-opacity-70`}></div>
+        heroBackgroundImages.map(bgImage => {
+          return <div class={`swiper-slide relative ${bgImage} after:absolute after:inset-0 after:bg-black after:bg-opacity-70`}></div>
         })
       }
     </div>
@@ -40,7 +38,7 @@ const heroBackgroundImages: string[] = [
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
-  
+
     <!-- If we need navigation buttons -->
     <div class="swiper-button-prev ml-5 text-white bg-white bg-opacity-10 w-12 h-12 rounded-full"></div>
     <div class="swiper-button-next mr-5 text-white bg-white bg-opacity-10 w-12 h-12 rounded-full"></div>
