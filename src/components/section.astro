@@ -1,8 +1,8 @@
 ---
-const { bgColor = 'bg-[#f5f6f7]' } = Astro.props;
+const { bgColorClassName = 'bg-[#f5f6f7]' } = Astro.props;
 ---
 
-<section class={`py-8 md:py-20 ${bgColor}`}>
+<section class={`py-8 md:py-20 ${bgColorClassName}`}>
     <div class="my-container">
         <slot />
     </div>
