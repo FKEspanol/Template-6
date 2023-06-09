@@ -145,7 +145,7 @@ const features: Features[] = [
           tab_3_contents = selectId('tab-3-contents'), 
           tab_4_contents = selectId('tab-4-contents');
 
-    const tab_contents = [tab_1_contents, tab_2_contents, tab_3_contents, tab_4_contents];  
+    const all_tabs_contents = [tab_1_contents, tab_2_contents, tab_3_contents, tab_4_contents];  
     
     tabs.forEach(currentTab => {
         currentTab.addEventListener('click', () => {
@@ -153,7 +153,7 @@ const features: Features[] = [
                 case 'tab-1':
                     toggleItems(
                         tab_1_contents, 
-                        tab_contents.filter(item => item != tab_1_contents),
+                        all_tabs_contents.filter(item => item != tab_1_contents),
                         currentTab,
                         [...tabs].filter(item => item != currentTab)
                         );
@@ -161,7 +161,7 @@ const features: Features[] = [
                 case 'tab-2':
                     toggleItems(
                         tab_2_contents, 
-                        tab_contents.filter(item => item != tab_2_contents),
+                        all_tabs_contents.filter(item => item != tab_2_contents),
                         currentTab,
                         [...tabs].filter(item => item != currentTab)
                         );
@@ -169,7 +169,7 @@ const features: Features[] = [
                 case 'tab-3':
                     toggleItems(
                         tab_3_contents, 
-                        tab_contents.filter(item => item != tab_3_contents),
+                        all_tabs_contents.filter(item => item != tab_3_contents),
                         currentTab,
                         [...tabs].filter(item => item != currentTab)
                         );
@@ -177,7 +177,7 @@ const features: Features[] = [
                 case 'tab-4':
                     toggleItems(
                         tab_4_contents, 
-                        tab_contents.filter(item => item != tab_4_contents),
+                        all_tabs_contents.filter(item => item != tab_4_contents),
                         currentTab,
                         [...tabs].filter(item => item != currentTab)
                         );
