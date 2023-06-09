@@ -1,8 +1,4 @@
-interface Card {
-    cardIcon: string;
-    cardTitle: string;
-    cardContent: string;
-}
+import type { Card } from "./interfaces";
 
 const data: Card[] = [
     {

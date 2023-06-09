@@ -1,8 +1,4 @@
-interface ConstructionData {
-    imgUrl: string;
-    cardTitle: string;
-    cardContent: string;
-}
+import type { ConstructionData } from "./interfaces";
 const data: ConstructionData[] = [
     {
         imgUrl: "bg-[url('/assets/images/constructions-1.jpg')]",

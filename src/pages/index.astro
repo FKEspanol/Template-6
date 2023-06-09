@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
-import MainHero from "../components/home/mainHero.astro";
-import GetsStarted from "../components/home/getsStarted.astro";
-import Constructions from "../components/home/constructions.astro";
-import Services from "../components/home/services.astro";
+import MainHero from "../components/sections/mainHero.astro";
+import GetsStarted from "../components/sections/getsStarted.astro";
+import Constructions from "../components/sections/constructions.astro";
+import Services from "../components/sections/services.astro";
+import AltServices from "../components/sections/reusableSections/altServices.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,5 +15,6 @@ import Services from "../components/home/services.astro";
     <GetsStarted />
     <Constructions />
     <Services />
+    <AltServices />
   </main>
 </Layout>
