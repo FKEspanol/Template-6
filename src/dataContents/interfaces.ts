@@ -38,4 +38,18 @@ interface ProjectsFilter {
  * =========================
  */
 
-export type { Card, ConstructionData, Features, Projects, ProjectsFilter };
+interface Testimonials {
+   imagePath: string;
+   name: string;
+   jobTitle: string;
+   feedbackMsg: string;
+}
+
+export type {
+   Card,
+   ConstructionData,
+   Features,
+   Projects,
+   ProjectsFilter,
+   Testimonials,
+};

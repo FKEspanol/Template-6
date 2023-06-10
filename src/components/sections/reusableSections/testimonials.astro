@@ -1,0 +1,108 @@
+---
+import Section from "../../section.astro";
+import MainSectionHeading from "../../MainSectionHeading.astro";
+import { Icon } from "astro-icon";
+
+import feedback from "../../../dataContents/testimonilans";
+---
+
+<Section>
+   <MainSectionHeading
+      name="Testimonials"
+      sub="Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti"
+   />
+
+   <!-- Slider main container -->
+   <div class="swiper slides-2 w-full h-full">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper w-full">
+         <!-- Slides -->
+         {
+            feedback.map(({ imagePath, name, jobTitle, feedbackMsg }) => {
+               return (
+                  <div class="swiper-slide">
+                     <div class="md:pl-14">
+                        <div class="pl-[30px] md:pl-[64px] pt-[30px] pr-[30px] pb-[30px] mr-[15px] mb-[30px] bg-white rounded shadow-lg relative">
+                           <div class="flex justify-start items-center mb-4 md:mb-0">
+                              <img
+                                 src={imagePath}
+                                 alt={`picture of ${name}`}
+                                 class="w-[90px] md:rounded-lg md:p-[6px] md:bg-white md:absolute md:-left-11"
+                              />
+                              <div class="ml-4 md:ml-0">
+                                 <h5 class="text-lg">{name}</h5>
+                                 <small class="text-sm text-gray-400 block">
+                                    {jobTitle}
+                                 </small>
+                                 {[1, 2, 3, 4, 5].map((icon) => (
+                                    <Icon
+                                       name="bi:star-fill"
+                                       class=" text-yellow-500 w-4 inline-block my-[10px]"
+                                    />
+                                 ))}
+                              </div>
+                           </div>
+
+                           <p class="italic text-[#64757f] py-4">
+                              <Icon
+                                 name="icomoon-free:quotes-left"
+                                 class="w-[20px] text-primary inline-block relative left-[-5px] bottom-[10px]"
+                              />
+                              {feedbackMsg}
+                              <Icon
+                                 name="icomoon-free:quotes-right"
+                                 class="w-[20px] text-primary inline-block relative right-[-5px] top-[-6px]"
+                              />
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               );
+            })
+         }
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination relative mt-5"></div>
+   </div>
+</Section>
+
+<style>
+   :root {
+      --swiper-pagination-bullet-width: 12px;
+      --swiper-pagination-bullet-height: 12px;
+   }
+</style>
+<script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+<script is:inline>
+   const feedbackSwiper = new Swiper(".slides-2", {
+      // Optional parameters
+      speed: 600,
+      direction: "horizontal",
+      loop: true,
+
+      slidesPerView: "auto",
+      breakpoints: {
+         320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+         },
+
+         1200: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+         },
+      },
+
+      autoplay: {
+         delay: 4000,
+         disableOnInteraction: false,
+      },
+
+      // If we need pagination
+      pagination: {
+         el: ".swiper-pagination",
+         clickable: true,
+         bulletActiveClass: "swiper-pagination-bullet-active bg-primary",
+      },
+   });
+</script>

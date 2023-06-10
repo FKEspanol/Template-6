@@ -6,31 +6,31 @@ import constructionData from "../../dataContents/construction";
 ---
 
 <Section bgColorClassName="bg-white">
-    <MainSectionHeading
-        name="Construction"
-        sub="Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum"
-    />
-    <div class="lg:flex lg:flex-wrap">
-        {
-            constructionData.map((data) => {
-                return (
-                    <div class="w-full lg:w-1/2 block py-3 sm:px-3">
-                        <div class="xl:flex min-h-full border">
-                            <div
-                                class={`min-h-[300px] xl:min-h[auto] xl:w-5/12 xl:pr-3 ${data.imgUrl} bg-cover bg-center`}
-                            />
-                            <div class="xl:w-7/12 p-3">
-                                <div class="p-7">
-                                    <h4 class="font-bold text-xl mb-4">
-                                        {data.cardTitle}
-                                    </h4>
-                                    <p>{data.cardContent}</p>
-                                </div>
-                            </div>
+   <MainSectionHeading
+      name="Construction"
+      sub="Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum"
+   />
+   <div class="lg:flex lg:flex-wrap">
+      {
+         constructionData.map((data) => {
+            return (
+               <div class="w-full lg:w-1/2 block py-3 sm:px-3">
+                  <div class="xl:flex min-h-full border">
+                     <div
+                        class={`min-h-[300px] xl:min-h[auto] xl:w-5/12 xl:pr-3 ${data.imgUrl} bg-cover bg-center`}
+                     />
+                     <div class="xl:w-7/12 p-3">
+                        <div class="p-7">
+                           <h4 class="font-bold text-xl mb-4">
+                              {data.cardTitle}
+                           </h4>
+                           <p>{data.cardContent}</p>
                         </div>
-                    </div>
-                );
-            })
-        }
-    </div>
+                     </div>
+                  </div>
+               </div>
+            );
+         })
+      }
+   </div>
 </Section>

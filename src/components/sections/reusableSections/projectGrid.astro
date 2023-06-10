@@ -22,7 +22,7 @@ import { projects, projectsFilter } from "../../../dataContents/projects";
              );
           })
        }
-    </ul>
+    </ul> 
  </div>
  <div class="flex flex-wrap project-container">
   {
@@ -41,9 +41,9 @@ import { projects, projectsFilter } from "../../../dataContents/projects";
   }
  </div>
 
-<script is:inline src="/assets/js/imagesloaded.pkgd.min.js"></script>
-<script is:inline src="/assets/js/isotope.pkgd.min.js"></script>
-<script is:inline>
+ <script is:inline src="/assets/js/imagesloaded.pkgd.min.js"></script>
+ <script is:inline src="/assets/js/isotope.pkgd.min.js"></script>
+<script is:inline type="module">
   const select = (query, all = false) => {
     query = query.trim();
     if (all) {
