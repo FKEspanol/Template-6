@@ -1,4 +1,9 @@
+---
+const { content } = Astro.props;
+---
 
-<h3 class="text-3xl heading-dark font-bold mb-6 after:block after:mt-6 after:w-14 after:h-1 after:bg-primary">
-    <slot />
+<h3
+   class="text-3xl heading-dark font-bold mb-6 after:block after:mt-6 after:w-14 after:h-1 after:bg-primary"
+>
+   {content}
 </h3>

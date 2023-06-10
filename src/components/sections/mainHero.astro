@@ -1,14 +1,12 @@
 ---
 import Button from "../button.astro";
 
-
-
 const heroBackgroundImages: string[] = [
-  "bg-[url('/assets/images/hero-carousel/hero-carousel-1.jpg')]",
-  "bg-[url('/assets/images/hero-carousel/hero-carousel-2.jpg')]",
-  "bg-[url('/assets/images/hero-carousel/hero-carousel-3.jpg')]",
-  "bg-[url('/assets/images/hero-carousel/hero-carousel-4.jpg')]",
-  "bg-[url('/assets/images/hero-carousel/hero-carousel-5.jpg')]",
+    "bg-[url('/assets/images/hero-carousel/hero-carousel-1.jpg')]",
+    "bg-[url('/assets/images/hero-carousel/hero-carousel-2.jpg')]",
+    "bg-[url('/assets/images/hero-carousel/hero-carousel-3.jpg')]",
+    "bg-[url('/assets/images/hero-carousel/hero-carousel-4.jpg')]",
+    "bg-[url('/assets/images/hero-carousel/hero-carousel-5.jpg')]",
 ];
 ---
 
@@ -16,73 +14,91 @@ const heroBackgroundImages: string[] = [
 <section class="swiper w-full h-screen">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-      <!-- Carousel Slides -->
-      {
-        heroBackgroundImages.map(bgImage => {
-          return <div class={`swiper-slide relative ${bgImage} bg-center bg-cover bg-no-repeat after:absolute after:inset-0 after:bg-black after:bg-opacity-70`}></div>
-        })
-      }
+        <!-- Carousel Slides -->
+        {
+            heroBackgroundImages.map((bgImage) => {
+                return (
+                    <div
+                        class={`swiper-slide relative ${bgImage} bg-center bg-cover bg-no-repeat after:absolute after:inset-0 after:bg-black after:bg-opacity-70`}
+                    />
+                );
+            })
+        }
     </div>
 
-     <!--Hero Content -->
-     <div class="my-container h-full absolute inset-0 z-[1]">
-      <div class="flex justify-center items-center h-full text-center ">
-        <div class="w-full lg:w-1/2 lg:px-3">
-          <h1 class="text-4xl md:text-[56px] font-[600] text-white block mb-8">Welcome to
-            <span class="block md:mt-5">UpConstruction</span>
-          </h1>
-          <p class="text-[1rem] md:text-lg text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <Button className="bg-primary text-dark font-bold">Get Started</Button>
+    <!--Hero Content -->
+    <div class="my-container h-full absolute inset-0 z-[1]">
+        <div class="flex justify-center items-center h-full text-center">
+            <div class="w-full lg:w-1/2 lg:px-3">
+                <h1
+                    class="text-4xl md:text-[56px] font-[600] text-white block mb-8"
+                >
+                    Welcome to
+                    <span class="block md:mt-5">UpConstruction</span>
+                </h1>
+                <p class="text-[1rem] md:text-lg text-white mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <Button className="bg-primary text-dark font-bold">
+                    Get Started
+                </Button>
+            </div>
         </div>
-      </div>
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
 
     <!-- If we need navigation buttons -->
-    <div class="hidden lg:flex swiper-button-prev ml-5 text-white bg-white bg-opacity-10 w-12 h-12 rounded-full"></div>
-    <div class="hidden lg:flex swiper-button-next mr-5 text-white bg-white bg-opacity-10 w-12 h-12 rounded-full"></div>
-  
+    <div
+        class="hidden lg:flex swiper-button-prev ml-5 text-white bg-white bg-opacity-10 w-12 h-12 rounded-full"
+    >
+    </div>
+    <div
+        class="hidden lg:flex swiper-button-next mr-5 text-white bg-white bg-opacity-10 w-12 h-12 rounded-full"
+    >
+    </div>
+
     <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
 </section>
 
-  <style>
+<style>
     :root {
-      --swiper-navigation-size: 1.5rem;
+        --swiper-navigation-size: 1.5rem;
     }
-  </style>
+</style>
 
-  <script is:inline type="module">
-    const swiper = new Swiper('.swiper',{
-    // Optional parameters
-    direction: "horizontal",
-    loop: true,
+<script is:inline type="module">
+    const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
 
-    // autoplay: {
-    //   delay: 4000,
-    //   disableOnInteraction: false,
-    // },
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // },
 
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      bulletActiveClass: "swiper-pagination-bullet-active bg-white",
-    },
+        // If we need pagination
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            bulletActiveClass: "swiper-pagination-bullet-active bg-white",
+        },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+        // Navigation arrows
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
 
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true,
-      dragClass: "swiper-scrollbar-drag",
-    },
-
-    
-  });
-  </script>
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            draggable: true,
+            dragClass: "swiper-scrollbar-drag",
+        },
+    });
+</script>

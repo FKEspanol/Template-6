@@ -1,0 +1,86 @@
+---
+import { projects, projectsFilter } from "../../../dataContents/projects";
+---
+
+<div class="flex justify-center mb-8">
+    <ul id="project-filters">
+       <li
+          class="filter-btn inline-block px-2 text-lg font-bold transition-all duration-200 hover:text-primary cursor-pointer currentTab"
+          data-filter="*"
+       >
+          All
+       </li>
+       {
+          projectsFilter.map(({ categoryName, dataFilter }) => {
+             return (
+                <li
+                   class="filter-btn inline-block px-2 text-lg font-bold transition-all duration-200 hover:text-primary cursor-pointer"
+                   data-filter={dataFilter}
+                >
+                   {categoryName}
+                </li>
+             );
+          })
+       }
+    </ul>
+ </div>
+ <div class="flex flex-wrap project-container">
+  {
+      projects.map(({ itemName, filterGroup, imagePath}) => {
+          return (
+              <div class={`${filterGroup} sm:w-1/2 lg:w-4/12 p-2 project-item`}>
+                      <img
+                      src={imagePath}
+                      alt={itemName}
+                      class="w-full"
+                      />
+                  </a>
+              </div>
+          )
+      })
+  }
+ </div>
+
+<script is:inline src="/assets/js/imagesloaded.pkgd.min.js"></script>
+<script is:inline src="/assets/js/isotope.pkgd.min.js"></script>
+<script is:inline>
+  const select = (query, all = false) => {
+    query = query.trim();
+    if (all) {
+      return [...document.querySelectorAll(query)];
+    } else return document.querySelector(query);
+  };
+
+  const on = (event, query, listener, all = false) => {
+    let selectElement = select(query, all);
+    if (selectElement) {
+      if (all) {
+        selectElement.forEach((el) => el.addEventListener(event, listener));
+      } else {
+        selectElement.addEventListener(event, listener);
+      }
+    }
+  };
+
+const projectContainer = select(".project-container");
+var iso = new Isotope(projectContainer, {
+    itemSelector: ".project-item",
+    layoutMode: "masonry",
+});
+
+  imagesLoaded(projectContainer, function () {
+    iso.layout();
+  });
+
+on(
+"click",
+"#project-filters li.filter-btn",
+function (e) {
+    e.preventDefault();
+    select(".filter-btn", true).forEach((btn) => btn.classList.remove("currentTab"));
+    this.classList.add("currentTab");
+    iso.arrange({ filter: this.getAttribute("data-filter") });
+},
+true
+);
+</script>

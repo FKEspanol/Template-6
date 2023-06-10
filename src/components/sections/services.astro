@@ -6,18 +6,21 @@ import CardGrid from "../cardGrid.astro";
 ---
 
 <Section>
-    <MainSectionHeading name="Services" sub="Voluptatem quibusdam ut ullam perferendis repellat non ut consequuntur est eveniet deleniti fignissimos eos quam" />
+    <MainSectionHeading
+        name="Services"
+        sub="Voluptatem quibusdam ut ullam perferendis repellat non ut consequuntur est eveniet deleniti fignissimos eos quam"
+    />
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-       {
-        servicesData.map(({ cardIcon, cardTitle, cardContent}) => {
-            return (
-                <CardGrid 
-                    cardIcon={cardIcon} 
-                    cardTitle={cardTitle} 
-                    cardContent={ cardContent }
-                />
-            )
-        })
-       }
+        {
+            servicesData.map(({ cardIcon, cardTitle, cardContent }) => {
+                return (
+                    <CardGrid
+                        cardIcon={cardIcon}
+                        cardTitle={cardTitle}
+                        cardContent={cardContent}
+                    />
+                );
+            })
+        }
     </div>
 </Section>
