@@ -1,14 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/header.astro";
-import MainHero from "../components/sections/mainHero.astro";
-import GetsStarted from "../components/sections/getsStarted.astro";
-import Constructions from "../components/sections/constructions.astro";
-import Services from "../components/sections/services.astro";
-import AltServices from "../components/sections/reusableSections/altServices.astro";
-import Features from "../components/sections/features.astro";
-import Projects from "../components/sections/projects.astro";
-import Testimonials from "../components/sections/reusableSections/testimonials.astro";
+import Header from "../components/reusableComponents/header.astro";
+import MainHero from "../components/homepage/mainHero.astro";
+import GetsStarted from "../components/homepage/getsStarted.astro";
+import Constructions from "../components/homepage/constructions.astro";
+import Services from "../components/homepage/services.astro";
+import AltServices from "../components/reusableSections/altServices.astro";
+import Features from "../components/homepage/features.astro";
+import Projects from "../components/homepage/projects.astro";
+import Testimonials from "../components/reusableSections/testimonials.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -24,5 +24,3 @@ import Testimonials from "../components/sections/reusableSections/testimonials.a
       <Testimonials />
    </main>
 </Layout>
-
-<script></script>
