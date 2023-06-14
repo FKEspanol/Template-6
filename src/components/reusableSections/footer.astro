@@ -5,87 +5,89 @@ import footerLinks from "../../dataContents/footer";
 ---
 
 <footer>
-   <Section
-      bgColorClassName="relative bg-[url('/assets/images/footer-bg.jpg')] bg-center bg-cover before:absolute before:inset-0 before:bg-black before:bg-opacity-80"
-   >
-      <div class="relative z-10">
-         <div class="lg:flex">
-            <div class="lg:w-4/12 lg:px-6 text-white mb-8 lg:mb-0">
-               <h3 class="text-[28px] uppercase font-bold mb-5">
-                  UpConstruction
-               </h3>
-               <p class="text-[15px]">
-                  A108 Adam Street
-                  <br />
-                  NY 535022, USA
-                  <br />
-                  <br />
-                  <strong>Phone:</strong>
-                  +1 5389 94788 35
-                  <br />
-                  <strong>Email:</strong>
-                  info@example.com
-               </p>
-               <div class="flex mt-4">
-                  {
-                     [
-                        "mdi:facebook",
-                        "mdi:twitter",
-                        "mdi:instagram",
-                        "mdi:linkedin",
-                     ].map((icon) => {
-                        return (
-                           <a
-                              href="#"
-                              class="border-spacing-1 rounded mr-2 w-9 h-9 text-white bg-white bg-opacity-10 flex justify-center items-center"
-                           >
-                              <Icon name={icon} class="w-6" />
-                           </a>
-                        );
-                     })
-                  }
-               </div>
-            </div>
+    <Section
+        bgColorClassName="relative bg-[url('/assets/images/footer-bg.jpg')] bg-center bg-cover before:absolute before:inset-0 before:bg-black before:bg-opacity-80"
+    >
+        <div class="relative z-10">
+            <div class="lg:flex">
+                <div class="lg:w-4/12 lg:px-6 text-white mb-8 lg:mb-0">
+                    <h3 class="text-[28px] uppercase font-bold mb-5">
+                        UpConstruction
+                    </h3>
+                    <p class="text-[15px]">
+                        A108 Adam Street
+                        <br />
+                        NY 535022, USA
+                        <br />
+                        <br />
+                        <strong>Phone:</strong>
+                        +1 5389 94788 35
+                        <br />
+                        <strong>Email:</strong>
+                        info@example.com
+                    </p>
+                    <div class="flex mt-4">
+                        {
+                            [
+                                "mdi:facebook",
+                                "mdi:twitter",
+                                "mdi:instagram",
+                                "mdi:linkedin",
+                            ].map((icon) => {
+                                return (
+                                    <a
+                                        href="#"
+                                        class="border-spacing-1 rounded mr-2 w-9 h-9 text-white bg-white bg-opacity-10 flex justify-center items-center"
+                                    >
+                                        <Icon name={icon} class="w-6" />
+                                    </a>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
 
-            {
-               footerLinks.map((item) => {
-                  return (
-                     <div class="lg:w-2/12 lg:px-6 mb-8 lg:mb-0">
-                        <h3 class="font-bold text-base text-white relative pb-4">
-                           {item.title}
-                        </h3>
-                        <ul>
-                           {item.links.map((link, index) => {
-                              return (
-                                 <li
-                                    class={`${
-                                       index === 0 ? "pt-0" : "pt-4"
-                                    } text-gray-300 text-sm`}
-                                 >
-                                    <a href="#">{link}</a>
-                                 </li>
-                              );
-                           })}
-                        </ul>
-                     </div>
-                  );
-               })
-            }
-         </div>
-         <div class="w-full lg:px-6 mt-[30px] text-center">
-            <div
-               class="pt-7 border-t-[1px] text-sm md:text-base border-t-gray-600 text-white"
-            >
-               &copy; Copyright
-               <strong>
-                  <span>UpConstruction.</span>
-               </strong>
-               All Rights Reserved
+                {
+                    footerLinks.map((item) => {
+                        return (
+                            <div class="lg:w-2/12 lg:px-6 mb-8 lg:mb-0">
+                                <h3 class="font-bold text-base text-white relative pb-4">
+                                    {item.title}
+                                </h3>
+                                <ul>
+                                    {item.links.map((link, index) => {
+                                        return (
+                                            <li
+                                                class={`${
+                                                    index === 0
+                                                        ? "pt-0"
+                                                        : "pt-4"
+                                                } text-gray-300 text-sm`}
+                                            >
+                                                <a href="#">{link}</a>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                        );
+                    })
+                }
             </div>
-            <p class="text-white text-sm md:text-base">
-               Designed by <a href="#" class="text-primary">Francis</a>
-            </p>
-         </div>
-      </div>
-   </Section>
+            <div class="w-full lg:px-6 mt-[30px] text-center">
+                <div
+                    class="pt-7 border-t-[1px] text-sm md:text-base border-t-gray-600 text-white"
+                >
+                    &copy; Copyright
+                    <strong>
+                        <span>UpConstruction.</span>
+                    </strong>
+                    All Rights Reserved
+                </div>
+                <p class="text-white text-sm md:text-base">
+                    Designed by <a href="#" class="text-primary">Francis</a>
+                </p>
+            </div>
+        </div>
+    </Section>
 </footer>
