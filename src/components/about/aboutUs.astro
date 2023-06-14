@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon";
+import Section from "../reusableComponents/section.astro";
+import SubSectionHeading from "../reusableComponents/subSectionHeading.astro";
+---
+
+<Section bgColorClassName="bg-white">
+    <div class="lg:flex relative">
+        <div
+            class="lg:w-7/12 lg:px-6 mb-8 lg:mb-0 bg-[url('/assets/images/about.jpg')] bg-cover bg-center bg-no-repeat min-h-[600px] lg:absolute lg:top-0 lg:right-0"
+        >
+        </div>
+        <div class="lg:w-7/12 lg:px-6">
+            <SubSectionHeading
+                content="Consequatur eius et magnam"
+                className="lg:text-5xl md:text-4xl lg:max-w-[65%] mb-[30px] lg:mb-20"
+            />
+            <div class="p-10 lg:pr-[35%] bg-[#f5f6f7]">
+                <h4 class="text-4xl mb-5 font-bold">Our Story</h4>
+                <p class="mb-4 text-base lg:text-lg">
+                    Inventore aliquam beatae at et id alias. Ipsa dolores amet
+                    consequuntur minima quia maxime autem. Quidem id sed
+                    ratione. Tenetur provident autem in reiciendis rerum at
+                    dolor. Aliquam consectetur laudantium temporibus dicta minus
+                    dolor.
+                </p>
+                <ul class="mb-4">
+                    <li class="py-[5px] text-sm lg:text-base">
+                        <Icon
+                            name="mdi:check-circle-outline"
+                            class="w-6 mr-1 text-primary inline-block"
+                        />
+                        Ullamco laboris nisi ut aliquip ex ea commo
+                    </li>
+                    <li class="py-[5px] text-sm lg:text-base">
+                        <Icon
+                            name="mdi:check-circle-outline"
+                            class="w-6 mr-1 text-primary inline-block"
+                        />
+                        Duis aute irure dolor in reprehenderit in
+                    </li>
+                    <li class="py-[5px] text-sm lg:text-base">
+                        <Icon
+                            name="mdi:check-circle-outline"
+                            class="w-6 mr-1 text-primary inline-block"
+                        />
+                        Ullamco laboris nisi ut aliquip ex ea
+                    </li>
+                </ul>
+                <p class="mb-4 text-base lg:text-lg">
+                    Vitae autem velit excepturi fugit. Animi ad non. Eligendi et
+                    non nesciunt suscipit repellendus porro in quo eveniet.
+                    Molestias in maxime doloremque.
+                </p>
+            </div>
+        </div>
+    </div>
+</Section>

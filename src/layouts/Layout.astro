@@ -22,7 +22,8 @@ const { title } = Astro.props as Props;
         <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
-    </head><body class="min-h-screen flex flex-col justify-between">
+    </head>
+    <body class="min-h-screen flex flex-col justify-between">
         <slot />
         <script is:inline type="module">
             import { initTE, Ripple } from "./assets/js/tw-elements.es.min.js";
