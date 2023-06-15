@@ -5,12 +5,12 @@ module.exports = {
     extend: {
       colors: {
         dark: "#1f1f1f",
-        primary: "#0078d4"
+        primary: "#feb900"
       },
 
       backgroundColor: {
         dark: "#1f1f1f",
-        primary: "#0078d4"
+        primary: "#feb900"
       }
     },
   },

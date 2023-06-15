@@ -1,10 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Section from "../components/reusableComponents/section.astro";
 import SubPageHero from "../components/reusableComponents/subPageHero.astro";
+import ProjectGrid from "../components/reusableSections/projectGrid.astro";
 import Footer from "../components/reusableSections/footer.astro";
 ---
 
-<Layout title="About Us">
-    <SubPageHero />
+<Layout title="Projects">
+    <SubPageHero title="Projects" />
+    <Section>
+        <ProjectGrid />
+    </Section>
     <Footer />
 </Layout>
