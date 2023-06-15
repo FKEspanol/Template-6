@@ -52,6 +52,12 @@ interface Teams {
     message: string;
 }
 
+interface Stats {
+    icon: string;
+    count: number;
+    item: string;
+}
+
 export type {
     Card,
     ConstructionData,
@@ -60,4 +66,5 @@ export type {
     ProjectsFilter,
     Testimonials,
     Teams,
+    Stats,
 };

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Counters Example</title>
+  <script>
+    function startCounters() {
+      var counters = [0, 0, 0, 0]; // Initial values for each counter
+      var targets = [100, 200, 300, 400]; // Target values for each counter
+      var duration = 1000; // Duration for all counters in milliseconds
+
+      var intervalIds = [];
+
+      for (var i = 0; i < counters.length; i++) {
+        var counter = counters[i];
+        var target = targets[i];
+        var interval = duration / target;
+
+        var intervalId = setInterval(function(currentCounter, currentTarget, currentIntervalId) {
+          currentCounter++;
+          document.getElementById("counter" + currentIntervalId).innerHTML = currentCounter;
+
+          if (currentCounter >= currentTarget) {
+            clearInterval(currentIntervalId);
+          }
+        }, interval, counter, target, intervalId);
+
+        intervalIds.push(intervalId);
+      }
+    }
+
+    function stopCounters() {
+      clearInterval(intervalIds[0]);
+      clearInterval(intervalIds[1]);
+      clearInterval(intervalIds[2]);
+      clearInterval(intervalIds[3]);
+    }
+  </script>
+</head>
+<body>
+  <h1>Multiple Counters Example</h1>
+  <button onclick="startCounters()">Start Counters</button>
+  <button onclick="stopCounters()">Stop Counters</button>
+
+  <p>Counter 1: <span id="counter0">0</span></p>
+  <p>Counter 2: <span id="counter1">0</span></p>
+  <p>Counter 3: <span id="counter2">0</span></p>
+  <p>Counter 4: <span id="counter3">0</span></p>
+</body>
+</html>
+

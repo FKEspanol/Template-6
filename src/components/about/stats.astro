@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon";
+import Section from "../reusableComponents/section.astro";
+
+import statsData from "../../dataContents/stats";
+---
+
+<Section>
+    <div class="md:flex md:flex-wrap">
+        {
+            statsData.map(({ icon, count, item }) => {
+                return (
+                    <div class="lg:w-3/12 md:w-1/2 py-3 md:p-3">
+                        <div class="p-[30px] flex items-center bg-white h-full">
+                            <Icon
+                                name={icon}
+                                class="text-primary w-[42px] inline-block mr-5"
+                            />
+                            <div>
+                                <span class="stats-counter mb-3 text-4xl font-bold">
+                                    {count}
+                                </span>
+                                <p class="text-base">{item}</p>
+                            </div>
+                        </div>
+                    </div>
+                );
+            })
+        }
+    </div>
+</Section>
