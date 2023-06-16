@@ -1,0 +1,97 @@
+---
+import { Icon } from "astro-icon";
+import Section from "../reusableComponents/section.astro";
+import Button from "../reusableComponents/button.astro";
+---
+
+<Section>
+    <div class="flex flex-wrap">
+        <div class="lg:w-1/2 w-full px-3">
+            <div
+                class="py-[30px] my-3 lg:my-0 flex flex-col items-center bg-white shadow-md"
+            >
+                <Icon
+                    name="mdi:map"
+                    class="w-14 text-primary p-2 bg-[#f5f6f7] rounded-full border-dotted border-[2px] border-primary"
+                />
+                <h3 class="text-xl text-smoke font-bold my-3">Our Address</h3>
+                <p>A108 Adam Street, New York, NY 535022</p>
+            </div>
+        </div>
+        <div class="lg:w-3/12 md:w-1/2 w-full px-3">
+            <div
+                class="py-[30px] my-3 lg:my-0 flex flex-col items-center bg-white shadow-md"
+            >
+                <Icon
+                    name="mdi:email"
+                    class="w-14 text-primary p-2 bg-[#f5f6f7] rounded-full border-dotted border-[2px] border-primary"
+                />
+                <h3 class="text-xl text-smoke font-bold my-3">Email Us</h3>
+                <p>contact@example.com</p>
+            </div>
+        </div>
+        <div class="lg:w-3/12 md:w-1/2 w-full px-3">
+            <div
+                class="py-[30px] my-3 lg:my-0 flex flex-col items-center bg-white shadow-md"
+            >
+                <Icon
+                    name="mdi:phone"
+                    class="w-14 text-primary p-2 bg-[#f5f6f7] rounded-full border-dotted border-[2px] border-primary"
+                />
+                <h3 class="text-xl text-smoke font-bold my-3">Call Us</h3>
+                <p>+1 5589 55488 55</p>
+            </div>
+        </div>
+    </div>
+    <div class="lg:flex">
+        <div class="lg:w-1/2 lg:px-3">
+            <div class="mt-6">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d34538.400665460416!2d125.61227577610892!3d7.128205950842995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1686879448009!5m2!1sen!2sph"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="min-h-[450px]"></iframe>
+            </div>
+        </div>
+        <div class="lg:w-1/2 lg:px-3">
+            <form class="w-full bg-white p-7 mt-6">
+                <div class="xl:grid xl:grid-cols-2 gap-7 mb-7">
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Your Name"
+                        class="w-full px-3 py-2.5 mb-3 xl:mb-0 text-sm md:text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Your Email"
+                        class="w-full px-3 py-2.5 text-sm md:text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    />
+                </div>
+                <textarea
+                    name="message"
+                    id="message"
+                    rows="10"
+                    class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mb-4"
+                    placeholder="Your Message"
+                >
+                </textarea>
+                <div class="flex justify-center">
+                    <Button
+                        type="submit"
+                        className="bg-primary text-dark font-bold"
+                    >
+                        Submit
+                    </Button>
+                </div>
+            </form>
+        </div>
+    </div>
+</Section>
