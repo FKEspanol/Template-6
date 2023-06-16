@@ -1,0 +1,36 @@
+---
+import Section from "./section.astro";
+import Button from "./button.astro";
+const posts = await Astro.glob("../../pages/blogposts/*.md");
+---
+
+<Section>
+    <div class="flex">
+        {
+            posts.map((post) => {
+                return (
+                    <div class="w-2/6 lg:px-3">
+                        <div class="bg-white">
+                            <img
+                                src={post.frontmatter.image}
+                                alt=""
+                                class="w-full"
+                            />
+                            <div class="p-6">
+                                <h3 class=" text-2xl font-bold mb-4">
+                                    {post.frontmatter.title}
+                                </h3>
+                                <p class="mb-4">{post.frontmatter.excerpt}</p>
+                                <a href={`/${post.frontmatter.slug}`}>
+                                    <Button className="bg-primary text-dark font-bold">
+                                        Read More
+                                    </Button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                );
+            })
+        }
+    </div>
+</Section>
