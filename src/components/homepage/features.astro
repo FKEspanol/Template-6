@@ -5,133 +5,145 @@ import features from "../../dataContents/features";
 ---
 
 <Section>
-   <ul class="flex mb-16">
-      {
-         features.map((item) => {
-            return (
-               <li class="w-3/12 px-1 sm:px-2">
-                  <a
-                     id={item.id}
-                     class={`feature-tab ${item.status} w-full font-bold py-4 border-b-4 flex items-center justify-center cursor-pointer hover:text-primary transition-all duration-200`}
-                  >
-                     <h4 class="text-lg">{item.featureTitle}</h4>
-                  </a>
-               </li>
-            );
-         })
-      }
-   </ul>
-   {
-      features.map(
-         ({
-            display,
-            id,
-            featureTitle,
-            heading,
-            subHeading,
-            image,
-            infoList,
-         }) => {
-            return (
-               <div id={id + "-contents"} class={`${display}`}>
-                  <div class="lg:flex lg:flex-row-reverse gap-y-3">
-                     <div class="lg:w-1/2 mb-10 lg:mb-0 sm:px-3">
-                        <img src={image} alt={featureTitle} width="100%" />
-                     </div>
-                     <div class="lg:w-1/2 sm:px-3">
-                        <SubSectionHeading content={heading} />
-                        <p class="md:text-lg mb-4">{subHeading}</p>
-                        <ul>
-                           {infoList.map((item) => {
-                              return (
-                                 <li class="custom-before md:text-lg before:content-['*'] before:text-3xl before:inline-block before:mr-3 before:text-primary mb-5">
-                                    {item}
-                                 </li>
-                              );
-                           })}
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            );
-         }
-      )
-   }
+    <ul class="flex mb-16">
+        {
+            features.map((item) => {
+                return (
+                    <li class="w-3/12 px-1 sm:px-2">
+                        <a
+                            id={item.id}
+                            class={`feature-tab ${item.status} w-full font-bold py-4 border-b-4 flex items-center justify-center cursor-pointer hover:text-primary transition-all duration-200`}
+                        >
+                            <h4 class="text-lg">{item.featureTitle}</h4>
+                        </a>
+                    </li>
+                );
+            })
+        }
+    </ul>
+    {
+        features.map(
+            ({
+                display,
+                id,
+                featureTitle,
+                heading,
+                subHeading,
+                image,
+                infoList,
+            }) => {
+                return (
+                    <div id={id + "-contents"} class={`${display}`}>
+                        <div class="lg:flex lg:flex-row-reverse gap-y-3">
+                            <div class="lg:w-1/2 mb-10 lg:mb-0 sm:px-3">
+                                <img
+                                    src={image}
+                                    alt={featureTitle}
+                                    width="100%"
+                                />
+                            </div>
+                            <div class="lg:w-1/2 sm:px-3">
+                                <SubSectionHeading content={heading} />
+                                <p class="md:text-lg mb-4">{subHeading}</p>
+                                <ul>
+                                    {infoList.map((item) => {
+                                        return (
+                                            <li class="custom-before md:text-lg before:content-['*'] before:text-3xl before:inline-block before:mr-3 before:text-primary mb-5">
+                                                {item}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+        )
+    }
 </Section>
 
 <script>
-   const selectId = (...sectionIds) => {
-      const el = [...sectionIds].map((i) => document.getElementById(i));
-      if (el.length > 1) return el;
-      return el[0];
-   };
-   const selectClass = (className) =>
-      Array.from(document.getElementsByClassName(className));
+    const selectId = (...sectionIds) => {
+        const el = [...sectionIds].map((i) => document.getElementById(i));
+        if (el.length > 1) return el;
+        return el[0];
+    };
+    const selectClass = (className) =>
+        Array.from(document.getElementsByClassName(className));
 
-   const toggleItems = (showItem, hideItems, currentTab, inactiveTabs) => {
-      showItem.classList.remove("hidden");
-      showItem.classList.add("block");
+    const toggleItems = (showItem, hideItems, currentTab, inactiveTabs) => {
+        showItem.classList.remove("hidden");
+        showItem.classList.add("block");
 
-      hideItems.forEach((item) => {
-         item.classList.remove("block");
-         item.classList.add("hidden");
-      });
+        hideItems.forEach((item) => {
+            item.classList.remove("block");
+            item.classList.add("hidden");
+        });
 
-      // toggle tab highlight
-      inactiveTabs.forEach((tab) => tab.classList.remove("currentTab"));
-      currentTab.classList.add("currentTab");
-   };
-   const tabs = selectClass("feature-tab");
+        // toggle tab highlight
+        inactiveTabs.forEach((tab) => tab.classList.remove("currentTab"));
+        currentTab.classList.add("currentTab");
+    };
+    const tabs = selectClass("feature-tab");
 
-   const tab_1_contents = selectId("tab-1-contents"),
-      tab_2_contents = selectId("tab-2-contents"),
-      tab_3_contents = selectId("tab-3-contents"),
-      tab_4_contents = selectId("tab-4-contents");
+    const tab_1_contents = selectId("tab-1-contents"),
+        tab_2_contents = selectId("tab-2-contents"),
+        tab_3_contents = selectId("tab-3-contents"),
+        tab_4_contents = selectId("tab-4-contents");
 
-   const all_tabs_contents = [
-      tab_1_contents,
-      tab_2_contents,
-      tab_3_contents,
-      tab_4_contents,
-   ];
+    const all_tabs_contents = [
+        tab_1_contents,
+        tab_2_contents,
+        tab_3_contents,
+        tab_4_contents,
+    ];
 
-   tabs.forEach((currentTab) => {
-      currentTab.addEventListener("click", () => {
-         switch (currentTab.id) {
-            case "tab-1":
-               toggleItems(
-                  tab_1_contents,
-                  all_tabs_contents.filter((item) => item != tab_1_contents),
-                  currentTab,
-                  [...tabs].filter((item) => item != currentTab)
-               );
-               break;
-            case "tab-2":
-               toggleItems(
-                  tab_2_contents,
-                  all_tabs_contents.filter((item) => item != tab_2_contents),
-                  currentTab,
-                  [...tabs].filter((item) => item != currentTab)
-               );
-               break;
-            case "tab-3":
-               toggleItems(
-                  tab_3_contents,
-                  all_tabs_contents.filter((item) => item != tab_3_contents),
-                  currentTab,
-                  [...tabs].filter((item) => item != currentTab)
-               );
-               break;
-            case "tab-4":
-               toggleItems(
-                  tab_4_contents,
-                  all_tabs_contents.filter((item) => item != tab_4_contents),
-                  currentTab,
-                  [...tabs].filter((item) => item != currentTab)
-               );
-               break;
-            default:
-         }
-      });
-   });
+    tabs.forEach((currentTab) => {
+        currentTab.addEventListener("click", () => {
+            switch (currentTab.id) {
+                case "tab-1":
+                    toggleItems(
+                        tab_1_contents,
+                        all_tabs_contents.filter(
+                            (item) => item != tab_1_contents
+                        ),
+                        currentTab,
+                        [...tabs].filter((item) => item != currentTab)
+                    );
+                    break;
+                case "tab-2":
+                    toggleItems(
+                        tab_2_contents,
+                        all_tabs_contents.filter(
+                            (item) => item != tab_2_contents
+                        ),
+                        currentTab,
+                        [...tabs].filter((item) => item != currentTab)
+                    );
+                    break;
+                case "tab-3":
+                    toggleItems(
+                        tab_3_contents,
+                        all_tabs_contents.filter(
+                            (item) => item != tab_3_contents
+                        ),
+                        currentTab,
+                        [...tabs].filter((item) => item != currentTab)
+                    );
+                    break;
+                case "tab-4":
+                    toggleItems(
+                        tab_4_contents,
+                        all_tabs_contents.filter(
+                            (item) => item != tab_4_contents
+                        ),
+                        currentTab,
+                        [...tabs].filter((item) => item != currentTab)
+                    );
+                    break;
+                default:
+            }
+        });
+    });
 </script>

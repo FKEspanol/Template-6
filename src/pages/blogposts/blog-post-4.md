@@ -1,13 +1,13 @@
 ---
-title: Nisi magni odit consequatur autem nulla dolorem
-slug: blog-post-2
-excerpt: Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
-image: "/assets/images/blog/blog-2.jpg"
+title: Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem
+slug: blog-post-4
+excerpt: Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
+image: "/assets/images/blog/blog-4.jpg"
 date: 2022-06-20
-author: Dennis Stoff
+author: Terrence Davis
 ---
 
-![Blog 1 Image](/assets/images/blog/blog-2.jpg)  
+![Blog 1 Image](/assets/images/blog/blog-4.jpg)  
 <br>
 
 <h1 class="heading-dark text-4xl font-bold mb-4">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h1>

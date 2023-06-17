@@ -1,13 +1,13 @@
 ---
-title: Nisi magni odit consequatur autem nulla dolorem
-slug: blog-post-2
-excerpt: Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
-image: "/assets/images/blog/blog-2.jpg"
+title: Accusamus quaerat aliquam qui debitis facilis consequatur
+slug: blog-post-5
+excerpt: In itaque assumenda aliquam voluptatem qui temporibus iusto nisi quia. Autem vitae quas aperiam nesciunt mollitia tempora odio omnis. Ipsa odit sit ut amet necessitatibus. Quo ullam ut corrupti autem consequuntur totam dolorem.
+image: "/assets/images/blog/blog-5.jpg"
 date: 2022-06-20
-author: Dennis Stoff
+author: Celine Smith
 ---
 
-![Blog 1 Image](/assets/images/blog/blog-2.jpg)  
+![Blog 1 Image](/assets/images/blog/blog-5.jpg)  
 <br>
 
 <h1 class="heading-dark text-4xl font-bold mb-4">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h1>

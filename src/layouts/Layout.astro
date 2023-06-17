@@ -29,48 +29,42 @@ const { title } = Astro.props as Props;
             import { initTE, Ripple } from "./assets/js/tw-elements.es.min.js";
             initTE({ Ripple });
         </script>
-        <style is:global>
-            :root {
-                --accent: 124, 58, 237;
-                --accent-gradient: linear-gradient(
-                    45deg,
-                    rgb(var(--accent)),
-                    #da62c4 30%,
-                    white 60%
-                );
-            }
-            html {
-                font-family: "Roboto", sans-serif;
-                background-color: #f6f6f6;
-            }
-            code {
-                font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-                    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
-                    monospace;
-            }
-
-            /**
-    Custom classes
-  */
-            .my-container {
-                @apply w-full sm:max-w-[600px] md:max-w-[720.9px] lg:max-w-[960px] xl:max-w-[1200px] 2xl:max-w-[1440px]  mx-auto px-4;
-            }
-
-            .heading-dark {
-                @apply text-[#52565e];
-            }
-
-            .currentTab {
-                @apply text-primary border-b-primary;
-            }
-
-            .beforeContent::before {
-                content: "";
-                background-color: black;
-                position: absolute;
-                inset: 0;
-                opacity: 0.8;
-            }
-        </style>
     </body>
 </html>
+<style is:global>
+    html {
+        font-family: "Roboto", sans-serif;
+        background-color: #f6f6f6;
+    }
+    code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
+
+    /**
+Custom classes
+*/
+    .my-container {
+        @apply w-full sm:max-w-[600px] md:max-w-[720.9px] lg:max-w-[960px] xl:max-w-[1200px] 2xl:max-w-[1440px]  mx-auto px-4;
+    }
+
+    .heading-dark {
+        @apply text-[#364d59];
+    }
+
+    .p-dark {
+        @apply text-[#52565e];
+    }
+
+    .currentTab {
+        @apply text-primary border-b-primary;
+    }
+
+    .beforeContent::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        inset: 0;
+        opacity: 0.8;
+    }
+</style>

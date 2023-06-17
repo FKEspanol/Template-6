@@ -1,13 +1,13 @@
 ---
-title: Nisi magni odit consequatur autem nulla dolorem
-slug: blog-post-2
-excerpt: Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
-image: "/assets/images/blog/blog-2.jpg"
+title: Distinctio provident quibusdam numquam aperiam aut
+slug: blog-post-6
+excerpt: Expedita et temporibus eligendi enim molestiae est architecto praesentium dolores. Illo laboriosam officiis quis. Labore officia quia sit voluptatem nisi est dignissimos totam. Et voluptate et consectetur voluptatem id dolor magni impedit. Omnis dolores sit.
+image: "/assets/images/blog/blog-6.jpg"
 date: 2022-06-20
-author: Dennis Stoff
+author: Katherine Johnson
 ---
 
-![Blog 1 Image](/assets/images/blog/blog-2.jpg)  
+![Blog 1 Image](/assets/images/blog/blog-6.jpg)  
 <br>
 
 <h1 class="heading-dark text-4xl font-bold mb-4">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h1>

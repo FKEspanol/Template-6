@@ -5,22 +5,26 @@ const posts = await Astro.glob("../../pages/blogposts/*.md");
 ---
 
 <Section>
-    <div class="flex">
+    <div class="md:flex flex-wrap">
         {
             posts.map((post) => {
                 return (
-                    <div class="w-2/6 lg:px-3">
-                        <div class="bg-white">
+                    <div class="xl:w-2/6 lg:w-1/2 lg:px-3 py-3">
+                        <div class="bg-white h-full">
                             <img
                                 src={post.frontmatter.image}
                                 alt=""
                                 class="w-full"
                             />
-                            <div class="p-6">
-                                <h3 class=" text-2xl font-bold mb-4">
+                            <div class="p-7">
+                                <h3 class="heading-dark text-2xl font-bold mb-4">
                                     {post.frontmatter.title}
                                 </h3>
-                                <p class="mb-4">{post.frontmatter.excerpt}</p>
+                                <p class="mb-4 text-lg leading-6 text-gray-500">
+                                    {post.frontmatter.excerpt}
+                                </p>
+                                <hr />
+                                <br />
                                 <a href={`/${post.frontmatter.slug}`}>
                                     <Button className="bg-primary text-dark font-bold">
                                         Read More
