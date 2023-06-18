@@ -1,25 +1,72 @@
 ---
 import { Icon } from "astro-icon";
 import Button from "../reusableComponents/button.astro";
+
+const { currentPage } = Astro.props;
 ---
 
-<header id="header" class="py-8 absolute w-full z-10">
+<header
+    id="navbar"
+    class="fixed w-screen py-10 z-[10] transition-all duration-300"
+>
     <div class="my-container">
         <div class="flex justify-between items-center text-white">
-            <a href="#">
+            <a href="/">
                 <h1 class="text-xl md:text-2xl font-bold uppercase">
                     Brand Name
                 </h1>
             </a>
             <nav
-                class="hidden md:flex lg:gap-x-8 md:gap-x-5 h-fit my-auto text-white uppercase font-semibold text-sm"
+                class="hidden md:flex lg:gap-x-8 md:gap-x-5 h-fit my-auto text-gray-300 uppercase font-bold text-sm"
             >
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/services">Services</a>
-                <a href="/projects">Projects</a>
-                <a href="/blog">Blog</a>
-                <a href="/contact">Contact</a>
+                <a
+                    href="/"
+                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
+                        currentPage == "home"
+                            ? "border-b-[2px] border-b-primary"
+                            : ""
+                    }`}>Home</a
+                >
+                <a
+                    href="/about"
+                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
+                        currentPage == "about"
+                            ? "border-b-[2px] border-b-primary"
+                            : ""
+                    }`}>About</a
+                >
+                <a
+                    href="/services"
+                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
+                        currentPage == "services"
+                            ? "border-b-[2px] border-b-primary"
+                            : ""
+                    }`}>Services</a
+                >
+                <a
+                    href="/projects"
+                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
+                        currentPage == "projects"
+                            ? "border-b-[2px] border-b-primary"
+                            : ""
+                    }`}>Projects</a
+                >
+                <a
+                    href="/blog"
+                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
+                        currentPage == "blog"
+                            ? "border-b-[2px] border-b-primary"
+                            : ""
+                    }`}>Blog</a
+                >
+                <a
+                    href="/contact"
+                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
+                        currentPage == "contact"
+                            ? "border-b-[2px] border-b-primary"
+                            : ""
+                    }`}>Contact</a
+                >
             </nav>
 
             <Icon
@@ -31,3 +78,26 @@ import Button from "../reusableComponents/button.astro";
         </div>
     </div>
 </header>
+
+<script is:inline>
+    const navbar = document.querySelector("header#navbar");
+    window.addEventListener("scroll", (e) => {
+        e.preventDefault();
+
+        if (window.scrollY >= 100) {
+            navbar.classList.remove("py-10");
+            navbar.classList.add("py-5", "bg-dark", "shadow-xl");
+        } else {
+            navbar.classList.remove("py-5", "bg-dark", "shadow-xl");
+            navbar.classList.add("py-10");
+        }
+    });
+
+    window.addEventListener("load", (e) => {
+        e.preventDefault();
+        if (window.scrollY >= 100) {
+            navbar.classList.remove("py-10");
+            navbar.classList.add("py-5", "bg-dark", "shadow-xl");
+        }
+    });
+</script>
