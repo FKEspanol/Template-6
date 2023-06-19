@@ -9,12 +9,12 @@ const { isReverse = false, bgColorClassName } = Astro.props;
 
 <Section bgColorClassName={bgColorClassName}>
     <div
-        class={`lg:flex ${
+        class={`lg:flex lg:justify-between md:px-3 ${
             isReverse === true ? "flex-row-reverse" : ""
-        } lg:justify-around lg:gap-y-3`}
+        }`}
     >
         <div
-            class="min-h-[400px] mb-8 lg:w-6/12 sm:px-3 bg-[url('/assets/images/alt-services.jpg')] bg-cover bg-center bg-no-repeat"
+            class="min-h-[400px] mb-8 lg:w-6/12 bg-[url('/assets/images/alt-services.jpg')] bg-cover bg-center bg-no-repeat"
         >
         </div>
         <div class="lg:w-5/12 sm:px-3 flex flex-col justify-center">

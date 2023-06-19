@@ -24,11 +24,12 @@ import { projects, projectsFilter } from "../../dataContents/projects";
        }
     </ul> 
  </div>
- <div class="flex flex-wrap project-container">
+ 
+<div class="flex flex-wrap project-container">
   {
       projects.map(({ itemName, filterGroup, imagePath}) => {
           return (
-              <div class={`${filterGroup} sm:w-1/2 lg:w-4/12 p-2 project-item`}>
+              <div class={`${filterGroup} md:w-1/2 lg:w-4/12 project-item py-3 md:p-3`}>
                       <img
                       src={imagePath}
                       alt={itemName}
@@ -40,6 +41,7 @@ import { projects, projectsFilter } from "../../dataContents/projects";
       })
   }
  </div>
+ 
 
  <script is:inline src="/assets/js/imagesloaded.pkgd.min.js"></script>
  <script is:inline src="/assets/js/isotope.pkgd.min.js"></script>

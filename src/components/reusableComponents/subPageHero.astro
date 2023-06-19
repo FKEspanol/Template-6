@@ -10,10 +10,10 @@ const { title, currentPage } = Astro.props as Props;
 
 <Header {currentPage} />
 <div
-    class="min-h-[40vh] relative bg-[url('/assets/images/footer-bg.jpg')] bg-center bg-cover before:absolute before:inset-0 before:bg-black before:bg-opacity-70 flex justify-center items-center"
+    class="min-h-[32vh] relative bg-[url('/assets/images/footer-bg.jpg')] bg-center bg-cover before:absolute before:inset-0 before:bg-black before:bg-opacity-70 flex justify-center items-center"
 >
     <div class="my-container relative h-full z-[2]">
-        <div class="text-center">
+        <div class="text-center mt-10">
             <h2 class="text-white text-5xl mb-3 font-bold">{title}</h2>
             <p class="text-lg text-white">
                 <a href="/">Home</a> / <span class="text-primary font-bold"
