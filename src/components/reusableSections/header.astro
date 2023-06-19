@@ -3,11 +3,46 @@ import { Icon } from "astro-icon";
 import Button from "../reusableComponents/button.astro";
 
 const { currentPage } = Astro.props;
+const navbarLinks = [
+    "home",
+    "about",
+    "services",
+    "projects",
+    "blog",
+    "contact",
+];
+
+const sidenavLinks = [
+    {
+        name: "home",
+        icon: "mdi:home",
+    },
+    {
+        name: "about",
+        icon: "mdi:about",
+    },
+    {
+        name: "services",
+        icon: "mdi:truck",
+    },
+    {
+        name: "projects",
+        icon: "mdi:crane",
+    },
+    {
+        name: "blog",
+        icon: "mdi:blog",
+    },
+    {
+        name: "contact",
+        icon: "mdi:phone",
+    },
+];
 ---
 
 <header
     id="navbar"
-    class="fixed w-screen py-10 z-[20] transition-all duration-300"
+    class="fixed w-screen py-10 z-[10] transition-all duration-300"
 >
     <div class="my-container">
         <div class="flex justify-between items-center text-white md:px-3">
@@ -17,67 +52,68 @@ const { currentPage } = Astro.props;
                 </h1>
             </a>
             <nav
-                class="hidden md:flex lg:gap-x-8 md:gap-x-5 h-fit my-auto text-gray-300 uppercase font-bold text-sm"
+                class="hidden lg:flex lg:gap-x-8 md:gap-x-5 h-fit my-auto text-gray-300 uppercase font-bold text-sm"
             >
-                <a
-                    href="/"
-                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
-                        currentPage == "home"
-                            ? "border-b-[2px] border-b-primary"
-                            : ""
-                    }`}>Home</a
-                >
-                <a
-                    href="/about"
-                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
-                        currentPage == "about"
-                            ? "border-b-[2px] border-b-primary"
-                            : ""
-                    }`}>About</a
-                >
-                <a
-                    href="/services"
-                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
-                        currentPage == "services"
-                            ? "border-b-[2px] border-b-primary"
-                            : ""
-                    }`}>Services</a
-                >
-                <a
-                    href="/projects"
-                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
-                        currentPage == "projects"
-                            ? "border-b-[2px] border-b-primary"
-                            : ""
-                    }`}>Projects</a
-                >
-                <a
-                    href="/blog"
-                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
-                        currentPage == "blog"
-                            ? "border-b-[2px] border-b-primary"
-                            : ""
-                    }`}>Blog</a
-                >
-                <a
-                    href="/contact"
-                    class={`hover:text-primary py-1.5 transition-all duration-200 ${
-                        currentPage == "contact"
-                            ? "border-b-[2px] border-b-primary"
-                            : ""
-                    }`}>Contact</a
-                >
+                {
+                    navbarLinks.map((i) => {
+                        return (
+                            <a
+                                href={`${i === "home" ? "/" : `/${i}`}`}
+                                class={`hover:text-primary py-2 w-full transition-all duration-200 ${
+                                    currentPage == `${i}`
+                                        ? "border-b-[2px] border-b-primary"
+                                        : ""
+                                }`}
+                            >
+                                {i}
+                            </a>
+                        );
+                    })
+                }
             </nav>
 
-            <Icon
-                name="mdi:menu"
-                class="text-white md:hidden w-5 h-5 cursor-pointer"
-            />
+            <!------Side nav button ------->
+            <div id="show-side-nav-btn" class="lg:hidden">
+                <Icon
+                    name="mdi:menu"
+                    class="text-white w-8 h-8 cursor-pointer"
+                />
+            </div>
 
             <!-- <Button className="bg-primary text-dark font-bold">Get started</Button> -->
         </div>
     </div>
 </header>
+<!--------Side nav---------- -->
+<div
+    id="side-nav"
+    class="fixed -right-[400px] top-0 bottom-0 min-h-screen max-w-[400px] w-full bg-dark z-[12] transition-all duration-500"
+>
+    <div class="py-5 z-[10] transition-all duration-300 w-full text-white">
+        <div id="close-side-nav-btn">
+            <Icon
+                name="uil:arrow-right"
+                class="w-16 text-primary cursor-pointer"
+            />
+        </div>
+        {
+            sidenavLinks.map(({ name, icon }) => {
+                return (
+                    <a
+                        href={`${name === "home" ? "/" : `/${name}`}`}
+                        class={`hover:text-primary active:text-primary focus:text-primary text-sm uppercase hover:bg-lightenDark active:bg-lightenDark font-bold py-5 pl-5 w-full transition-all duration-200 block ${
+                            currentPage == `${name}` ? "text-primary" : ""
+                        }`}
+                    >
+                        <Icon name={`${icon}`} class="w-6 mr-5 inline-block" />
+                        {name}
+                    </a>
+                );
+            })
+        }
+    </div>
+</div>
+<!-----------------Model -------------- -->
 
 <script is:inline>
     const navbar = document.querySelector("header#navbar");
@@ -99,5 +135,29 @@ const { currentPage } = Astro.props;
             navbar.classList.remove("py-10");
             navbar.classList.add("py-5", "bg-dark", "shadow-xl");
         }
+    });
+
+    /**
+        show side nav on smaller screen
+    */
+
+    const showSidenavBtn = document.getElementById("show-side-nav-btn");
+    const sidenav = document.getElementById("side-nav");
+
+    showSidenavBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        sidenav.classList.remove("-right-[400px]");
+        sidenav.classList.add("right-0");
+    });
+
+    /**
+     * close side nav
+     */
+
+    const closeSideNavBtn = document.getElementById("close-side-nav-btn");
+    closeSideNavBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        sidenav.classList.remove("right-0");
+        sidenav.classList.add("-right-[400px]");
     });
 </script>
