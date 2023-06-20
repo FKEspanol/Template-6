@@ -1,5 +1,6 @@
 ---
 title: Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.
+topic: Sports
 slug: blog-post-3
 excerpt: Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.
 image: "/assets/images/blog/blog-3.jpg"

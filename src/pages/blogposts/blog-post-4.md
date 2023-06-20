@@ -1,5 +1,6 @@
 ---
 title: Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem
+topic: Economics
 slug: blog-post-4
 excerpt: Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
 image: "/assets/images/blog/blog-4.jpg"

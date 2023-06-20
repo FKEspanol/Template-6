@@ -52,16 +52,16 @@ const sidenavLinks = [
                 </h1>
             </a>
             <nav
-                class="hidden lg:flex lg:gap-x-8 md:gap-x-5 h-fit my-auto text-gray-300 uppercase font-bold text-sm"
+                class="hidden lg:flex lg:gap-x-8 md:gap-x-5 h-fit my-auto text-gray-300 uppercase font-semibold text-sm"
             >
                 {
                     navbarLinks.map((i) => {
                         return (
                             <a
                                 href={`${i === "home" ? "/" : `/${i}`}`}
-                                class={`hover:text-primary py-2 w-full transition-all duration-200 ${
+                                class={`hover:text-primary py-1 w-full transition-all duration-200 ${
                                     currentPage == `${i}`
-                                        ? "border-b-[2px] border-b-primary"
+                                        ? "border-b-[2px] border-b-primary text-white"
                                         : ""
                                 }`}
                             >

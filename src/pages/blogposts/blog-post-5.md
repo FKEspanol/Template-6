@@ -1,5 +1,6 @@
 ---
 title: Accusamus quaerat aliquam qui debitis facilis consequatur
+topic: Sports
 slug: blog-post-5
 excerpt: In itaque assumenda aliquam voluptatem qui temporibus iusto nisi quia. Autem vitae quas aperiam nesciunt mollitia tempora odio omnis. Ipsa odit sit ut amet necessitatibus. Quo ullam ut corrupti autem consequuntur totam dolorem.
 image: "/assets/images/blog/blog-5.jpg"

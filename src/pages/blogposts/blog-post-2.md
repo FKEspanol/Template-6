@@ -1,5 +1,6 @@
 ---
 title: Nisi magni odit consequatur autem nulla dolorem
+topic: Economics
 slug: blog-post-2
 excerpt: Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
 image: "/assets/images/blog/blog-2.jpg"

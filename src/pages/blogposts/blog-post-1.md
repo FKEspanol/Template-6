@@ -1,5 +1,6 @@
 ---
 title: Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia
+topic: Politics
 slug: blog-post-1
 excerpt: Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.       
 image: "/assets/images/blog/blog-1.jpg"

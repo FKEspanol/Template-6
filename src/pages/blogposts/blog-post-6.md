@@ -1,5 +1,6 @@
 ---
 title: Distinctio provident quibusdam numquam aperiam aut
+topic: Politics
 slug: blog-post-6
 excerpt: Expedita et temporibus eligendi enim molestiae est architecto praesentium dolores. Illo laboriosam officiis quis. Labore officia quia sit voluptatem nisi est dignissimos totam. Et voluptate et consectetur voluptatem id dolor magni impedit. Omnis dolores sit.
 image: "/assets/images/blog/blog-6.jpg"
