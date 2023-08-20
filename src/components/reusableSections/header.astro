@@ -2,7 +2,11 @@
 import { Icon } from "astro-icon";
 import Button from "../reusableComponents/button.astro";
 
-const { currentPage } = Astro.props;
+export interface Props {
+    currentPage: string;
+}
+
+const { currentPage } = Astro.props as Props;
 const navbarLinks = [
     "home",
     "about",

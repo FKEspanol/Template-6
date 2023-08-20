@@ -1,12 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/reusableSections/header.astro";
 import SubPageHero from "../components/reusableComponents/subPageHero.astro";
 import BlogCard from "../components/reusableComponents/blogCard.astro";
 import Footer from "../components/reusableSections/footer.astro";
 ---
 
 <Layout title="Blog">
-    <SubPageHero title="Blog" currentPage="blog" />
-    <BlogCard />
+    <Header currentPage="blog" />
+    <main>
+        <SubPageHero title="Blog" />
+        <BlogCard />
+    </main>
     <Footer />
 </Layout>

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/reusableSections/header.astro";
 import Section from "../components/reusableComponents/section.astro";
 import SubPageHero from "../components/reusableComponents/subPageHero.astro";
 import CardGrid from "../components/reusableSections/cardGrid.astro";
@@ -9,12 +10,15 @@ import Footer from "../components/reusableSections/footer.astro";
 ---
 
 <Layout title="Services">
-    <SubPageHero title="Services" currentPage="services" />
-    <Section bgColorClassName="bg-white">
-        <CardGrid />
-    </Section>
-    <AltServices />
-    <AltServices isReverse={true} bgColorClassName="bg-white" />
-    <Testimonials />
+    <Header currentPage="services" />
+    <main>
+        <SubPageHero title="Services" />
+        <Section bgColorClassName="bg-white">
+            <CardGrid />
+        </Section>
+        <AltServices />
+        <AltServices isReverse={true} bgColorClassName="bg-white" />
+        <Testimonials />
+    </main>
     <Footer />
 </Layout>
